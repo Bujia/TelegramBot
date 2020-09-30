@@ -31,4 +31,13 @@ for entry in feed_entries:
          #printing the message to telegram
          #bot.sendMessage(chat, message)
          
-
+url1 = "http://fanfox.net/manga/onepunch_man/"
+#Fetching the source code
+source_code = requests.get(url1).text
+soup = BeautifulSoup(source_code, "html.parser")
+#Finding the latest chapter
+table = soup.find("div", {"class": "detail-main-list-main"}).findAll("p")
+manga_match = datetime.datetime.strftime(datetime.datetime.now()," %b %d, %Y")
+print(manga_match)
+for element in table:
+    print(element.text)
