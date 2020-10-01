@@ -6,6 +6,8 @@
 import telepot
 import feedparser
 from datetime import datetime
+from bs4 import BeautifulSoup
+import requests
 
 url = "http://horriblesubs.info/rss.php?res=720"  
 token = "insert token here"
