@@ -12,6 +12,8 @@ token = "insert token here"
 chat = "insert chatnumber here"
 bot = telepot.Bot(token)
 
+feed = feedparser.parse(url)
+feed_entries = feed.entries
 
 today = datetime.today().day
 #f-formating
