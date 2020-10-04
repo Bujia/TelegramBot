@@ -17,19 +17,19 @@ bot = telepot.Bot(token)
 feed = feedparser.parse(url)
 feed_entries = feed.entries
 
-today = datetime.today().day
+#Getting the date in the right format for rss publisdate
+date1 = datetime.strftime(datetime.today(), "%d %b %Y ")
 #f-formating
-today_match = f', {today}'
 for entry in feed_entries:
     #checking only todays new releases
-     if today_match in entry["published"]:
+    if date1 in entry["published"]:
          sentence = entry.title
          #remocing useless words from string
-         words = sentence.replace(" [720p].mkv", "")
-         anime = words.replace("[HorribleSubs] ", "")
+         words = sentence.replace("[720p].mkv", "")
+         anime = words.replace("[Erai-raws] ", "")
          message = "Check out todays new episodes!\n" + anime
          #printing the message to telegram
-         #bot.sendMessage(chat, message)
+         bot.sendMessage(chat, message)
          
 
 url1 = "http://fanfox.net/manga/onepunch_man/"
