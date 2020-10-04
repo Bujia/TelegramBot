@@ -9,7 +9,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import requests
 
-url = "http://horriblesubs.info/rss.php?res=720"  
+url = "https://nyaa.si/?page=rss&q=720p&c=0_0&f=0&u=Erai-raws"
 token = "insert token here"
 chat = "insert chatnumber here"
 bot = telepot.Bot(token)
